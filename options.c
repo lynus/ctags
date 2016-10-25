@@ -119,7 +119,8 @@ optionValues Option = {
 		FALSE,  /* -fields=n */
 		TRUE,   /* -fields=s */
 		FALSE,  /* -fields=S */
-		TRUE    /* -fields=t */
+		TRUE,   /* -fields=t */
+		FALSE  	/* -fields=T */
 	},
 	NULL,       /* -I */
 	FALSE,      /* -a */
@@ -859,6 +860,7 @@ static void processFieldsOption (
 		case 'S': field->signature      = mode; break;
 		case 'z': field->kindKey        = mode; break;
 		case 't': field->typeRef        = mode; break;
+		case 'T': field->putStatic 	= mode; break;
 
 		default: error(WARNING, "Unsupported parameter '%c' for \"%s\" option",
 					c, option);
